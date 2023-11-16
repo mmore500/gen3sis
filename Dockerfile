@@ -15,4 +15,5 @@ RUN mkdir -p ~/.cloudshell/ && \
     rm -rf /var/lib/apt/lists/*
 
 # Install R packages
-RUN Rscript -e "install.packages(c('codetools', 'dplyr', 'gen3sis', 'gdistance', 'ggplot2', 'Matrix', 'raster', 'rgdal'))"
+RUN Rscript -e "install.packages(c('codetools', 'dplyr', 'gen3sis', 'gdistance', 'ggplot2', 'Matrix', 'raster', 'rgdal', 'remotes')); library(remotes); install_github('project-gen3sis/R-package'); install_github('cran/rgdal');"
+
