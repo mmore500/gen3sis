@@ -9,17 +9,16 @@ name: R-CMD-check
 jobs:
   R-CMD-check:
     runs-on: macOS-latest
+    timeout-minutes: 30
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      - uses: r-lib/actions/setup-r@v1
-      - uses: r-lib/actions/setup-pandoc@v1
-      - name: Install gdal 
+      - uses: r-lib/actions/setup-r@v2
+      - uses: r-lib/actions/setup-pandoc@v2
+      - name: Install proj 
         run: |
           brew install proj
-          brew install gdal
-          brew install geos
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
