@@ -13,7 +13,7 @@ RUN mkdir -p ~/.cloudshell/ && \
     aptitude install -y libgdal-dev libproj-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    pip3 install dendropy scipy matplotlib numpy seaborn biopython ete3 phylotrackpy pandas --break-system-packages
+    pip3 install alifedata-phyloinformatics-convert dendropy scipy matplotlib numpy seaborn biopython ete3 phylotrackpy pandas --break-system-packages
 
 # Install R packages
 RUN Rscript -e "install.packages(c('codetools', 'dplyr', 'gen3sis', 'gdistance', 'ggplot2', 'Matrix', 'raster', 'rgdal', 'remotes')); library(remotes); install_github('cran/rgdal');"
