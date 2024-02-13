@@ -10,7 +10,7 @@ RUN mkdir -p ~/.cloudshell/ && \
     touch ~/.cloudshell/no-apt-get-warning && \
     apt-get update -y && \
     apt-get install -y aptitude python3 python3-pip git && \
-    aptitude install -y libgdal-dev libproj-dev && \
+    aptitude install -y libgdal-dev libglpk-dev libproj-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     pip3 install alifedata-phyloinformatics-convert dendropy scipy matplotlib numpy seaborn biopython ete3 phylotrackpy pandas --break-system-packages
